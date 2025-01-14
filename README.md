@@ -33,8 +33,6 @@ npm install
 node index
 ```
 
-## Node.js Version
-
 This script requires **Node.js version 20+**.
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
