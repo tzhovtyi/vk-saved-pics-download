@@ -7,9 +7,11 @@ import { format, fromUnixTime } from "date-fns";
 import { ru } from "date-fns/locale";
 
 // to get token: https://github.com/vkhost/vkhost.github.io
-const TOKEN = "your token";
 
-const DOWNLOAD_DIR = path.join(os.homedir(), "Desktop");
+const TOKEN =
+  "vk1.a.6-2_eNvaunClDp30c2yYiw9yux4I7eyUzQF3kAZjrmBZe_1saAb3U4hPRAjrmCmXphOizk7Fb3tC8HeGxdVb9wLkXpSv1V_bTBR1tbAPq3_tPEvCeuppjqrOkmiU2ETX-T961Ruz3eJsq5RtUSZNirbwiYre2fyJh5IErB78QFaJxFRl4a7-jrA6xWwG5N-afRMBmtMUcrizW1sHS5GIRg";
+
+const DOWNLOAD_DIR = "D:/creeperinas_saved_pics";
 
 // bc of VK API constraint
 const BATCH_SIZE = 1000;
@@ -76,8 +78,12 @@ const downloadAllSavedPhotos = async () => {
 
       for (let i = 0; i < photos.length; i++) {
         const photo = photos[i];
-        const url = photo.orig_photo.url;
+        const url = photo?.orig_photo?.url;
         const photoIndex = downloaded + 1;
+        // vk can return undefined elements in photos array
+        if (!url) {
+          continue;
+        }
         const filePath = path.join(
           DOWNLOAD_DIR,
           `${photoIndex} ${timestanpToDate(photo.date)}.jpg`
