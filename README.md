@@ -13,36 +13,36 @@ Before running the script, ensure you have the following:
 
 1. **Clone the repository**:
 
-   \`\`\`bash
+   ```bash
    git clone https://github.com/yourusername/vk-photo-album-downloader.git
    cd vk-photo-album-downloader
-   \`\`\`
+   ```
 
 2. **Install dependencies**:
 
    Make sure all the required Node.js packages are installed:
 
-   \`\`\`bash
+   ```bash
    npm install
-   \`\`\`
+   ```
 
 3. **Configure the script**:
 
-   Open \`index.js\` and insert your VK API token. Modify the download path if needed.
+   Open `index.js` and insert your VK API token. Modify the download path if needed.
 
-   \`\`\`javascript
-   const apiToken = 'YOUR_VK_API_TOKEN';
-   const downloadPath = './downloads';
-   \`\`\`
+   ```javascript
+   const apiToken = "YOUR_VK_API_TOKEN";
+   const downloadPath = "./downloads";
+   ```
 
 ## Usage
 
 1. Run the script:
 
-   \`\`\`bash
+   ```bash
    npm install
    node index
-   \`\`\`
+   ```
 
 2. The script will begin downloading all your saved photo albums to the specified download path.
 
